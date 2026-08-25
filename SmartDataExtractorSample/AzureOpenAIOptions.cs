@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Syncfusion.SmartDemo.Services
+namespace SmartDataExtractorSample
 {
     // Configuration for the AzureOpenAI section of appsettings.json.
     public sealed class AzureOpenAIOptions

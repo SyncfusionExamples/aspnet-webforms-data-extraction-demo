@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Syncfusion.SmartDemo.Services
+namespace SmartDataExtractorSample
 {
     /// <summary>
     /// Result of a single key-value detection. <see cref="Value"/> holds the raw
