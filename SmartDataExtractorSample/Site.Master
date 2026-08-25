@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SmartDataExtractorSample.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>Smart Data Extractor</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Syncfusion EJ2 theme (Fluent) -->
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/34.2.2/fluent2.css" />
+    <!-- Syncfusion EJ2 base scripts -->
+    <script src="https://cdn.syncfusion.com/ej2/34.2.2/dist/ej2.min.js"></script>
+
+</head>
+<body>
+    <form runat="server">
+        <style type="text/css">
+            /* Blue rounded top bar (image 2 reference) */
+            .sde-appbar {
+                background: linear-gradient(90deg, #1259B7 0%, #1E6FD9 100%);
+                color: #ffffff;
+                border-radius: 0 0 14px 14px;
+                box-shadow: 0 2px 8px rgba(15, 76, 129, 0.18);
+                margin: 0;
+                padding: 10px 18px;
+            }
+            .sde-appbar-inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                min-height: 48px;
+            }
+            .sde-appbar-brand {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+            .sde-appbar-logo {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                height: 32px;
+                border-radius: 7px;
+                background: rgba(255, 255, 255, 0.14);
+                color: #ffffff;
+            }
+            .sde-appbar-title {
+                color: #ffffff !important;
+                font-family: 'Segoe UI Semibold', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                letter-spacing: 0.2px;
+                text-decoration: none;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .sde-appbar-title:hover,
+            .sde-appbar-title:focus {
+                color: #eaf2ff !important;
+                text-decoration: none;
+            }
+            .sde-appbar-actions {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .sde-appbar-reset {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 6px 14px;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.12);
+                color: #ffffff;
+                border: 1px solid rgba(255, 255, 255, 0.35);
+                font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+                font-size: 13px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 120ms ease, border-color 120ms ease, transform 80ms ease;
+            }
+            .sde-appbar-reset:hover {
+                background: rgba(255, 255, 255, 0.22);
+                border-color: rgba(255, 255, 255, 0.55);
+            }
+            .sde-appbar-reset:active {
+                transform: translateY(1px);
+            }
+            .sde-appbar-reset:focus {
+                outline: 2px solid #ffffff;
+                outline-offset: 2px;
+            }
+            /* Page body should breathe inside the rounded header */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            body {
+                background: #f4f6fa;
+                font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+                color: #1f2933;
+            }
+            form {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .sde-appbar {
+                flex: 0 0 auto;
+            }
+            .container.body-content {
+                flex: 1 1 auto;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+                padding-top: 12px;
+                padding-bottom: 0;
+                margin: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+        </style>
+        <asp:ScriptManager runat="server" EnablePageMethods="true">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <header class="sde-appbar">
+            <div class="sde-appbar-inner">
+                <div class="sde-appbar-brand">
+                    <span class="sde-appbar-logo" aria-hidden="true">
+                        <img src="./favicon.ico" alt="Key-Value Pairs Extractor" width="22" height="22" />
+                    </span>
+                    <a class="sde-appbar-title" runat="server" href="~/">Smart Data Extractor</a>
+                </div>
+            </div>
+        </header>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                
+            </footer>
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+
+    <!-- Syncfusion EJ2 PDF Viewer script -->
+    <script src="https://cdn.syncfusion.com/ej2/34.2.2/pdfviewer/ej2-pdfviewer.min.js"></script>
+</body>
+</html>
