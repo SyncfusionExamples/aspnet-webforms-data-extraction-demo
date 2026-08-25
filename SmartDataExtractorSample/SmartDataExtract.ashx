@@ -1,7 +1,6 @@
 // filepath: SmartDataExtractorSample/SmartDataExtract.ashx
 <%@ WebHandler Language="C#" Class="SmartDataExtractorSample.SmartDataExtract" %>
 
-using Syncfusion.SmartDemo.Services;
 using Syncfusion.SmartDataExtractor;
 using System;
 using System.Collections.Generic;

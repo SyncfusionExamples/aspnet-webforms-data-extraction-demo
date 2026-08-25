@@ -4,7 +4,7 @@ using OpenAI.Chat;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Syncfusion.SmartDemo.Services
+namespace SmartDataExtractorSample
 {
     // Owns the single OpenAIClient and exposes a ChatClient.
     public sealed class OpenAIClientFactory : IDisposable
