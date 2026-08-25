@@ -6,7 +6,7 @@ ASP.NET Web Forms demo showcasing end-to-end data extraction from scanned PDF do
 
 ## What it does
 
-1. **Loads** a PDF into the browser through the Syncfusion EJ2 PDF Viewer.
+1. **Loads** a PDF into the browser through the **[Syncfusion PDF Viewer](https://www.syncfusion.com/pdf-viewer-sdk)**.
 2. **Ships** the PDF bytes (as a base64 payload) to a server-side HTTP handler.
 3. **Runs OCR + extraction** on the server using `Syncfusion.SmartDataExtractor.DataExtractor`, which returns a structured JSON envelope containing pages, lines, word boxes, tables and form fields.
 4. **Detects label/value pairs** by sending the structured OCR text to an OpenAI chat model. The model is asked to identify "Label : Value" relationships such as `Policy Number : POL-12345678`.
