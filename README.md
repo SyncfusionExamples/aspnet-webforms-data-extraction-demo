@@ -1,6 +1,6 @@
-# aspnet-webforms-data-extraction-demo
+# Smart Data Extraction Demo in ASP.NET WebForms
 
-ASP.NET Web Forms demo showcasing end-to-end data extraction from scanned PDF documents using the **Syncfusion Smart Data Extraction** library. The app extracts structured key/value data from uploaded or scanned PDFs, lets users review and edit the results in the browser, and exports the final data as JSON for seamless .NET integration.
+ASP.NET Web Forms demo showcasing end-to-end data extraction from scanned PDF documents using the **[Syncfusion Smart Data Extraction](https://www.syncfusion.com/document-sdk/net-smart-data-extraction-library)** library. The app extracts structured key/value data from uploaded or scanned PDFs, lets users review and edit the results in the browser, and exports the final data as JSON for seamless .NET integration.
 
 ---
 
@@ -64,6 +64,3 @@ Open `Web.config` and replace the placeholders:
 | `OpenAI.ApiKey` | Your OpenAI API key, used server-side only. |
 | `OpenAI.Model`  | The chat-completions model name (e.g. `YOUR_Model_Name`). |
 | `Syncfusion.LicenseKey` | Your Syncfusion license key from the Customer Portal; removes the evaluation banner. |
-
-### WebForms-specific note
-This project is `.NET Framework 4.7.2` WebForms and reads config via `ConfigurationManager.AppSettings` — there is no `appsettings.json` here. Keys are picked up on application startup; restart the app (or recycle the app pool) after editing `Web.config` for changes to take effect.
