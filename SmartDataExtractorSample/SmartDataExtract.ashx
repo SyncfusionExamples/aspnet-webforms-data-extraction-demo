@@ -133,6 +133,7 @@ namespace SmartDataExtractorSample
             }
             catch (Exception ex)
             {
+                LogIfPossible(context, ex);
                 throw new HttpException(500, "SmartDataExtractor error: " + ex.GetType().Name + ": " + ex.Message, ex);
             }
 
@@ -299,21 +300,23 @@ namespace SmartDataExtractorSample
         {
             try
             {
-                string dir = context.Server.MapPath("~/App_Data");
-                string path = Path.Combine(dir, "HandlerErrors.log");
-                var sb = new StringBuilder();
-                sb.Append(DateTime.UtcNow.ToString("o"));
-                sb.Append("\t");
-                sb.Append(ex.GetType().FullName);
-                sb.Append(": ");
-                sb.Append(ex.Message);
-                sb.AppendLine();
-                sb.AppendLine(ex.StackTrace ?? "(no stack)");
-                File.AppendAllText(path, sb.ToString(), Encoding.UTF8);
+               string dir = context.Server.MapPath("~/Default_Input");
+
+               if (!Directory.Exists(dir))
+                  Directory.CreateDirectory(dir);
+
+               string path = Path.Combine(dir, "HandlerErrors.log");
+
+               var sb = new StringBuilder();
+               sb.AppendLine(DateTime.UtcNow.ToString("o"));
+               sb.AppendLine(ex.ToString());
+               sb.AppendLine("======================================");
+
+               File.AppendAllText(path, sb.ToString(), Encoding.UTF8);
             }
             catch
             {
-                // ignore
+               // ignore
             }
         }
     }
