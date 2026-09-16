@@ -325,6 +325,7 @@
     <Content Include="Content\ej2\compatibility\fabric.scss" />
     <Content Include="Content\ej2\compatibility\bootstrap4.scss" />
     <Content Include="Content\ej2\compatibility\bootstrap.scss" />
+    <Content Include="aspnet-webforms-data-extraction-demo\Default.aspx" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\ej2\ej2.min.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
