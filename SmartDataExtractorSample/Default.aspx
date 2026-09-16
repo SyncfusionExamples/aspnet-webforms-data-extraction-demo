@@ -420,6 +420,9 @@
     </main>
 
     <script type="text/javascript">
+        // Use the actual application root so the demo works both at site root
+        // and when deployed under a virtual application/path.
+        window.Base_URL_Path = '<%= ResolveUrl("~/") %>';
         // Registering Syncfusion license key
         ej.base.registerLicense('<%= System.Configuration.ConfigurationManager.AppSettings["Syncfusion.LicenseKey"] %>');
         // Server-side injected values (URLs, defaults, etc.)

@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link runat="server" href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Syncfusion EJ2 theme (Fluent) -->
     <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/34.2.2/fluent2.css" />
@@ -158,7 +158,7 @@
             <div class="sde-appbar-inner">
                 <div class="sde-appbar-brand">
                     <span class="sde-appbar-logo" aria-hidden="true">
-                        <img src="./favicon.ico" alt="Key-Value Pairs Extractor" width="22" height="22" />
+                        <img src="<%= ResolveUrl("~/favicon.ico") %>" alt="Key-Value Pairs Extractor" width="22" height="22" />
                     </span>
                     <a class="sde-appbar-title" runat="server" href="~/">Smart Data Extractor</a>
                 </div>
